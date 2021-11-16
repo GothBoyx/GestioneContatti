@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
+<style type="text/css">
+body {
+background-image: linear-gradient(-87deg, #F2F5F6 0%, #DDE5E8 100%);
+}
+
+.container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  }
+  small {
+    font-size: 0.5em;
+  }
+
+
+  .li {
+    border-radius: 3px;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  .table-header {
+    background-color: #95A5A6;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+.center {
+text-align: center;
+}
+.allTabs {
+    text-align: center;
+}
+.tabs {
+    min-height: 200px;
+    clear: both;
+}
+.tab {
+    display: inline-block;
+}
+.type-details {
+    border-bottom: 1px solid #e9eef0;
+    padding: 20px;
+    width: 60%;
+    float: left;
+}
+.form-label {
+    float: left;
+    min-width: 17px;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #62696d;
+    margin-right: 15px;
+}
+.no-padding {
+    padding: 0px;
+}
+input.form-text {
+    background: #fff;
+    border: 1px solid #dae2e6;
+    font-size: 12px;
+    color: #62696d;
+    padding: 6px 8px;
+    box-shadow: none;
+    border-radius: 0;
+    line-height: normal;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0px;
+}
+</style>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
+<meta charset="ISO-8859-1">
+<title>Lista Fatture</title>
+</head>
+<body>
+<div class="container">
+<div class="type-details">
+<h2>Ricerca Fattura Per:</h2>
+<form action="/html/getbycliente" method="GET">
+<div class="form-label">
+  <input type="text" class="form-control" id="floatingInput" name="cliente" placeholder="Cliente">
+  <label for="cliente" style="color: Black; "> Nome Cliente</label>
+  <input type="submit" value="Ricerca">
+</div>
+</form>
+</div>
+<form action="/html/getbystato" method="GET">
+<div class="type-details">
+<div class="form-label">
+  <input class="form-check-input" type="radio" name="stato" value="Pagata">
+  <label class="form-check-label" for="stato">
+    Pagata
+  </label>
+  </div>
+<div class="form-label">
+  <input class="form-check-input" type="radio" name="stato" value="Non Pagata">
+  <label class="form-check-label" for="stato">
+    Non Pagata
+  </label>
+    </div>
+<div class="form-label">
+  <input class="form-check-input" type="radio" name="stato" value="Pagata in ritardo">
+  <label class="form-check-label" for="stato">
+    Pagata in ritardo
+  </label>
+  </div>
+<div class="form-label">
+  <input class="form-check-input" type="radio" name="stato" value="Non Gestita">
+  <label class="form-check-label" for="stato">
+    Non Gestita
+  </label>
+</div><br>
+<input type="submit" value="Ordina" >
+</div>
+</form>
+<div class="type-details">
+<form action="/html/getbyanno" method="GET">
+<div class="form-label">
+  <input type="text" class="form-control" id="floatingInput" name="anno" placeholder="Anno">
+  <label for="anno" style="color: Black; ">Anno</label>
+  <input type="submit" value="Ricerca">
+</div>
+</form>
+</div>
+<div class="type-details">
+<form action="/html/getbydata" method="GET">
+<div class="form-label">
+  <label for="data" class="col-sm-2 col-form-label">Data:</label>
+  <input type="date" name="data" id="data">
+  <input type="submit" value="Ricerca">
+  <div class="col-sm-10">
+  
+ 
+  </div>
+  
+</div>
+</form>
+</div>
+
+<div class="type-details">
+<form action="/html/getbyrangeimporto" method="GET">
+ <div class="input-group form-label">
+  <span class="input-group-text">Range di importo</span>
+  <input type="text" name="minimo" placeholder="importo minimo" aria-label="Minimo" class="form-control">
+  <input type="text" name="massimo" placeholder="importo massimo" aria-label="Massimo" class="form-control">
+  <input type="submit" value="ricerca">
+</div>
+    </form>
+    </div>
+<h2 class="type-details"> Fatture</h2>
+<div style="padding:30px" class="type-details">
+<ul class="list-group list-group-horizontal li">
+<li class = "list-group-item table-header" style= "width:25%">ID Fattura</li>
+<li class = "list-group-item table-header" style= "width:25%"> Nome Cliente</li>
+<li class = "list-group-item table-header" style= "width:25%"> Data Fattura</li>
+<li class = "list-group-item table-header" style= "width:25%">  Numero Fattura</li>
+<li class = "list-group-item table-header" style= "width:25%"> Anno Fattura</li>
+<li class = "list-group-item table-header" style= "width:25%"> Importo Fattura</li>
+<li class = "list-group-item table-header" style= "width:25%"> Stato Fattura</li>
+</ul>
+	<ul class="list-group list-group-horizontal li" th:each="fatture : ${fatture}">
+		<li th:text="${fatture.id}" class = "list-group-item table-header" style= "width:25%"> ID Fattura</li>
+		<li th:text="${fatture.cliente.nomeContatto}" class = "list-group-item table-header" style= "width:25%" > Nome Cliente</li>
+		<li th:text="${fatture.data}" class = "list-group-item table-header" style= "width:25%" > Data Fattura</li>
+		<li th:text="${fatture.numero}" class = "list-group-item table-header" style= "width:25%" > Numero Fattura</li>
+		<li th:text="${fatture.anno}" class = "list-group-item table-header" style= "width:25%"> Anno Fattura</li>
+		<li th:text="${fatture.importo}" class = "list-group-item table-header" style= "width:25%" > Importo Fattura </li>
+		<li th:text="${fatture.stato.nome}" class = "list-group-item table-header" style= "width:25%" > Stato Fattura</li>
+		</ul>
+		</div>		
+		</div>
+</body>
+</html>

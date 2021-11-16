@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
+<style type="text/css">
+body{
+background-image: linear-gradient(-87deg, #F2F5F6 0%, #DDE5E8 100%);
+}
+
+.center {
+text-align: center;
+}
+.allTabs {
+    text-align: center;
+}
+.tabs {
+    min-height: 200px;
+    clear: both;
+}
+.tab {
+    display: inline-block;
+}
+.type-details {
+    border-bottom: 1px solid #e9eef0;
+    padding: 20px;
+    width: 60%;
+    float: left;
+}
+.form-label {
+    float: left;
+    min-width: 17px;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #62696d;
+    margin-right: 15px;
+}
+.no-padding {
+    padding: 0px;
+}
+input.form-text {
+    background: #fff;
+    border: 1px solid #dae2e6;
+    font-size: 12px;
+    color: #62696d;
+    padding: 6px 8px;
+    box-shadow: none;
+    border-radius: 0;
+    line-height: normal;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0px;
+}
+body {
+  font-family: 'lato', sans-serif;
+}
+.container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  }
+  small {
+    font-size: 0.5em;
+  }
+
+
+  .li {
+    border-radius: 3px;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  .table-header {
+    background-color: #95A5A6;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+</style>
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
+<meta charset="ISO-8859-1">
+
+<title>Lista Clienti</title>
+</head>
+<body>
+<div class="container">
+<div class="type-details">
+		<h2>Ricerca Cliente Per:</h2>
+<form action="/html/getbyfatturato" method="GET">
+<div class="form-label">
+  <input type="text" class="form-control" name="fatturato" placeholder="Fatturato">
+  <label for="fatturato" style="color: Black; ">Fatturato</label>
+  <input type="submit" value="Ricerca">
+</div>
+</form>
+</div>
+<div class="type-details">
+<form action="/html/getbypartedelnome" method="GET">
+<div class="form-label">
+  <input type="text" class="form-control" id="floatingInput" name="nome" placeholder="Nome Contatto">
+  <label for="nome" style="color: Black; ">Nome</label>
+  <input type="submit" value="Ricerca">
+</div>
+</form>
+</div>
+<div class="type-details">
+<form action="/html/getbydataultimocontatto" method="GET">
+<div class="form-label">
+  <label for="dataUltimoContatto" class="col-sm-2 col-form-label">Ultimo Contatto:</label>
+  <input type="date" name="dataUltimoContatto" id="dataUltimoContatto">
+  <input type="submit" value="Ricerca">
+  <div class="col-sm-10">
+    
+  </div>
+  
+</div>
+</form>
+
+<div class="type-details">
+<h2> Ordina la lista dei clienti per:</h2>
+<form action="/html/getbydatainserimento" method="GET">
+<div class="form-label">
+  <label for="dataInserimento" class="col-sm-2 col-form-label">Data Inserimento:</label><input type="date" name="dataInserimento">
+   <input type="submit" value="Ricerca">
+  <div class="col-sm-10">
+    
+  </div>
+</div>
+
+</form>
+
+</div>
+<form action="/html/getorder" method="GET">
+<div class="type-details">
+<div class="form-label">
+  <input class="form-check-input" type="radio" name="sort" value="nomeContatto">
+  <label class="form-check-label" for="sort">
+    Nome Contatto
+  </label>
+  </div>
+<div class="form-label">
+  <input class="form-check-input" type="radio" name="sort" value="fatturatoAnnuale">
+  <label class="form-check-label" for="sort">
+    Fatturato Annuale
+  </label>
+</div><br>
+<input type="submit" value="Ordina" >
+</div>
+</form>
+</div>
+<h2 class="type-details"> Clienti</h2>
+<div style="padding:30px" class="type-details form-label">
+<ul class="list-group list-group-horizontal li">
+<li class = "list-group-item table-header" style= "width:20%">ID Cliente</li>
+<li class = "list-group-item table-header" style= "width:20%">Nome</li>
+<li class = "list-group-item table-header" style= "width:20%">Cognome</li>
+<li class = "list-group-item table-header" style= "width:20%"> Ragione Sociale</li>
+<li class = "list-group-item table-header" style= "width:20%"> Partita Iva</li>
+<li class = "list-group-item table-header" style= "width:20%"> Tipo Cliente</li>
+<li class = "list-group-item table-header" style= "width:20%"> Email</li>
+<li class = "list-group-item table-header" style= "width:20%"> Pec</li>
+<li class = "list-group-item table-header" style= "width:20%"> Telefono</li>
+<li class = "list-group-item table-header" style= "width:20%"> Telefono Contatto</li>
+<li class = "list-group-item table-header" style= "width:20%"> Email Contatto</li>
+<li class = "list-group-item table-header" style= "width:20%"> Indirizzo</li>
+<li class = "list-group-item table-header" style= "width:20%"> Data Inserimento</li>
+<li class = "list-group-item table-header" style= "width:20%"> Data Ultimo Contatto</li>
+<li class = "list-group-item table-header" style= "width:20%"> Fatturato Annuale</li>
+
+</ul>
+	<ul class="list-group list-group-horizontal li" th:each="clienti :${creaclienti}">
+		<li th:text="${clienti.id}" class = "list-group-item table-header" style= "width:20%"> ID Cliente</li>
+		<li th:text="${clienti.nomeContatto}" class = "list-group-item table-header" style= "width:20%"> Nome</li>
+		<li th:text="${clienti.cognomeContatto}" class = "list-group-item table-header" style= "width:20%"> Cognome</li>		
+		<li th:text="${clienti.ragioneSociale}" class = "list-group-item table-header" style= "width:20%" > Ragione Sociale</li>
+		<li th:text="${clienti.partitaIva}" class = "list-group-item table-header" style= "width:20%" > Partita Iva</li>
+		<li th:text="${clienti.tipoCliente}" class = "list-group-item table-header" style= "width:20%" >Tipo Cliente</li>
+		<li th:text="${clienti.email}" class = "list-group-item table-header" style= "width:20%"> Email</li>
+		<li th:text="${clienti.pec}" class = "list-group-item table-header" style= "width:20%" > Pec </li>
+		<li th:text="${clienti.telefono}" class = "list-group-item table-header" style= "width:20%" > Telefono</li>
+		<li th:text="${clienti.telefonoContatto}" class = "list-group-item table-header" style= "width:20%" > Telefono Contatto</li>
+		<li th:text="${clienti.emailContatto}" class = "list-group-item table-header" style= "width:20%" > Email Contatto</li>
+		<li th:text="${clienti.indirizzoSedeOperativa.via}" class = "list-group-item table-header" style= "width:20%" > Indirizzo</li>
+		<li th:text="${clienti.dataInserimento}" class = "list-group-item table-header" style= "width:20%" > Data Inserimento</li>
+		<li th:text="${clienti.dataUltimoContatto}" class = "list-group-item table-header" style= "width:20%" > Data Ultimo Contatto</li>
+		<li th:text="${clienti.fatturatoAnnuale}" class = "list-group-item table-header" style= "width:20%" > Fatturato Annuale</li>	
+		</ul>
+		</div>	
+	</div>
+	
+			
+</body>
+</html>

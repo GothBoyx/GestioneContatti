@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
+<style>
+body{
+background-image: linear-gradient(-87deg, #F2F5F6 0%, #DDE5E8 100%);
+}
+
+#my{
+zoom: 65%;
+}
+
+div.content { width: 200px }
+
+.container {
+max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.center {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+</style>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
+<meta charset="ISO-8859-1">
+<title>Crea Cliente</title>
+</head>
+<body>
+<div id="my" class="container">
+	<form action="/html/creacliente" th:action="@{/html/creacliente}"
+		method="get">
+		<h2 style="text-align: center">Crea Cliente</h2>
+		<div class="content">
+		<div class="center">
+			<div class="input-group-text">
+				<span class="input-group-text">Nome</span> <input
+					name="nomeContatto" class="form-control" placeholder="Nome">
+			</div>
+			<div class="input-group-text">
+				<span class="input-group-text">Cognome</span> <input
+					name="cognomeContatto" class="form-control" placeholder="Cognome">
+			</div>
+			<div class="input-group-text">
+				<span class="input-group-text">Ragione Sociale</span> <input
+					name="ragioneSociale" class="form-control"
+					placeholder="Ragione Sociale"> 
+			</div>
+
+			<div class="input-group-text">
+				<span class="input-group-text">Partita Iva</span> <input
+					name="partitaIva" class="form-control" placeholder="Partita Iva">
+			</div>
+
+			<div class="input-group-text">
+				<span class="input-group-text">Tipo Cliente</span> <input
+					name="tipoCliente" class="form-control"
+					placeholder="Tipo Cliente">
+			</div>
+
+			<div class="input-group-text">
+				<span class="input-group-text">Email</span> <input name="email"
+					class="form-control" placeholder="Email">
+			</div>
+
+			<div class="input-group-text">
+				<span class="input-group-text">Pec</span> <input name="pec"
+					class="form-control" placeholder="Pec">
+			</div>
+
+			<div class="input-group-text">
+				<span class="input-group-text">Telefono</span> <input
+					name="telefono" class="form-control" placeholder="Telefono">
+			</div>
+
+			<div class="input-group-text">
+				<span class="input-group-text">Telefono Contatto</span> <input
+					name="telefonoContatto" class="form-control"
+					placeholder="Telefono Contatto">
+			</div>
+			<div class="input-group-text">
+				<span class="input-group-text">Email Contatto</span> <input
+					name="emailContatto" class="form-control"
+					placeholder="Email Contatto">
+			</div>
+			<div class="input-group-text">
+				<span class="input-group-text">Indirizzo Sede Operativa</span> <input
+					name="indirizzoSedeOperativa" class="form-control"
+					placeholder="Indirizzo Sede Operativa">
+			</div>
+			<div class="input-group-text">
+				<span class="input-group-text">Indirizzo Sede Legale</span> <input
+					name="indirizzoSedeLegale" class="form-control"
+					placeholder="Indirizzo Sede Legale">
+			</div>
+			<div class="input-group-text">
+				<span class="input-group-text">Data Inserimento</span> <input
+					type="date" name="dataInserimento" class="form-control"
+					placeholder="Data Inserimento">
+			</div>
+			<div class="input-group-text">
+				<span class="input-group-text">Data Ultimo Contatto</span> <input
+					type="date" name="dataUltimoContatto" class="form-control"
+					placeholder="Data Ultimo Contatto">
+			</div>
+			<div class="input-group-text">
+				<span class="input-group-text">Fatturato Annuale</span> <input
+					name="fatturatoAnnuale" class="form-control"
+					placeholder="Fatturato Annuale">
+			</div>
+			<input type="submit" id="submitButton" th:value="Save"> <input
+				type="reset" id="resetButton" name="reset" th:value="Reset" />
+		</div>
+		
+</div>
+
+	</form>
+	</div>
+</body>
+</html>

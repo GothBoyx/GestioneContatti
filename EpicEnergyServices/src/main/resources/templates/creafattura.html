@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
+<style>
+body{
+background-image: linear-gradient(-87deg, #F2F5F6 0%, #DDE5E8 100%);
+}
+
+* {
+  margin: 0px auto;
+  padding: 0px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.center {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+</style>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
+<meta charset="ISO-8859-1">
+<title>Crea Fattura</title>
+</head>
+<body>
+	<form action="/html/creafattura" th:action="@{/html/creafattura}" method="get">
+		<h2 style="text-align: center">Crea Fatture</h2>
+			<div class="content">
+		<div class="center">
+			<div class="input-group-text">
+				<span class="input-group-text">Nome Cliente</span> <input name="nomeContatto" class="form-control" placeholder="Nome">
+			</div>
+
+			<div class="input-group-text">
+				<span class="input-group-text">Data Fattura</span> <input type=date
+					name="data"
+					class="form-control" placeholder="Data">
+			</div>
+
+			<div class="input-group-text">
+				<span class="input-group-text">Numero Fattura</span> <input
+					name="numero"
+					class="form-control" placeholder="Numero Fattura">
+			</div>
+
+			<div class="input-group-text">
+				<span class="input-group-text">Anno Fattura</span> <input
+					name="anno"
+					class="form-control" placeholder="Anno">
+			</div>
+
+			<div class="input-group-text">
+				<span class="input-group-text">Importo</span> <input
+					name="importo"
+					class="form-control" placeholder="Importo">
+			</div>
+
+			<div class="input-group-text">
+				<span class="input-group-text">Stato Fattura</span> <input
+					name="stato"
+					class="form-control" placeholder="Stato Fattura">
+			</div>
+			<input type="submit" id="submitButton" th:value="Save"> <input
+				type="reset" id="resetButton" name="reset" th:value="Reset" />
+		</div>
+			</div>
+
+
+	</form>
+	
+</body>
+</html>
