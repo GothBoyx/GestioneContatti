@@ -1,0 +1,928 @@
+{
+	"info": {
+		"_postman_id": "8e84363d-ac5c-4700-bd21-c903f354edad",
+		"name": "Progetto Finale",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Provincia",
+			"item": [
+				{
+					"name": "SALVA PROVINCIA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"nome\":\"Ulul\",\r\n\"sigla\":\"UL\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/provinciacontroller/salvaprovincia",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"provinciacontroller",
+								"salvaprovincia"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINA PROVINCIA",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/provinciacontroller/eliminaprovincia/133",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"provinciacontroller",
+								"eliminaprovincia",
+								"133"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POPOLA PROVINCE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/provinciacontroller/popola",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"provinciacontroller",
+								"popola"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AGGIORNA PROVINCIA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"nome\":\"boh\",\r\n\"sigla\":\"BH\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/provinciacontroller/aggiornaprovincia/140",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"provinciacontroller",
+								"aggiornaprovincia",
+								"140"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comune",
+			"item": [
+				{
+					"name": "SALVA COMUNE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"nome\":\"Fragoli\",\r\n\"provincia\":{\r\n    \"id\":\"3\",\r\n    \"nome\":\"Ulul\",\r\n    \"sigla\":\"UL\"\r\n    \r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/comune/salvacomune",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comune",
+								"salvacomune"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POPOLA COMUNI",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comune/popola",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comune",
+								"popola"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINA COMUNE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comune/eliminacomune/7927",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comune",
+								"eliminacomune",
+								"7927"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AGGIORNA COMUNE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"nome\":\"Samara\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/comune/aggiornacomune/7927",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comune",
+								"aggiornacomune",
+								"7927"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Indirizzo",
+			"item": [
+				{
+					"name": "SALVA INDIRIZZO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"via\":\"Via dei monto\",\r\n\"civico\":12,\r\n\"cap\":97100,\r\n\"localita\":\"boh\",\r\n\"comune\":{\r\n    \"id\":\"3\",\r\n    \"nome\":\"Fragoli\",\r\n    \"provincia\":{\r\n         \"id\":\"3\",\r\n    \"nome\":\"Ulul\",\r\n    \"sigla\":\"UL\"\r\n\r\n    }\r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/indirizzocontroller/salvaindirizzo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"indirizzocontroller",
+								"salvaindirizzo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINA INDIRIZZO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/indirizzocontroller/eliminaindirizzo/16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"indirizzocontroller",
+								"eliminaindirizzo",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AGGIORNA INDIRIZZO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"cap\":\"342343\",\r\n\"civico\":\"242\",\r\n\"via\":\"via dei morti\",\r\n\"localita\":\"cimitero\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/indirizzocontroller/aggiornaindirizzo/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"indirizzocontroller",
+								"aggiornaindirizzo",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stato Fattura",
+			"item": [
+				{
+					"name": "SALVA STATO FATTURA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Pagata\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/statofatturacontroller/salvafattura",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"statofatturacontroller",
+								"salvafattura"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINA STATO FATTURA",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/statofatturacontroller/eliminafattura/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"statofatturacontroller",
+								"eliminafattura",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AGGIORNA STATO FATTURA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"nome\":\"Pagamento rifiutato\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/statofatturacontroller/aggiornastato/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"statofatturacontroller",
+								"aggiornastato",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fattura",
+			"item": [
+				{
+					"name": "SALVA FATTURA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"cliente\":{\r\n\"id\":\"3\",\r\n\"ragioneSociale\":\"Acea\",\r\n\"partitaIva\":\"102012\",\r\n\"tipoCliente\":\"PA\",\r\n\"email\":\"l@gmail.it\",\r\n\"pec\":\"l@gmail.com\",\r\n\"telefono\":\"03829832\",\r\n\"nomeContatto\":\"lollo\",\r\n\"cognomeContatto\":\"pe\",\r\n\"telefonoContatto\":\"34539489\",\r\n\"emailContatto\":\"acea@gm.it\",\r\n\"indirizzoSedeOperativa\":{\r\n    \"id\":\"2\",\r\n \"via\":\"via duomo\",\r\n\"civico\":\"29\",\r\n\"cap\":\"000298\",\r\n\"localita\":\"mare\",\r\n\"comune\":{\r\n    \"nome\":\"Navigli\",\r\n    \"provincia\":{\r\n        \"nome\":\"Milano\",\r\n        \"sigla\":\"MI\"\r\n    }\r\n}\r\n}\r\n},\r\n\"indirizzoSedeLegale\":{\r\n\"id\":\"2\",\r\n \"via\":\"via duomo\",\r\n\"civico\":\"29\",\r\n\"cap\":\"23456\",\r\n\"localita\":\"mare\",\r\n\"comune\":{\r\n    \"nome\":\"Navigli\",\r\n    \"provincia\":{\r\n        \"nome\":\"Milano\",\r\n        \"sigla\":\"MI\"\r\n    }\r\n},\r\n\"dataInserimento\":\"2021-05-17\",\r\n\"dataUltimoContatto\":\"2021-04-18\",\r\n\"fatturatoAnnuale\":\"2000.45\"\r\n},\r\n\"data\":\"2021-12-14\",\r\n\"numero\":\"23423\",\r\n\"anno\":\"2032\",\r\n\"importo\":\"23.5\",\r\n\"stato\":{\r\n    \"id\":\"2\",\r\n    \"nome\":\"Pagata\"\r\n\r\n\r\n}\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fatturacontroller/salvafattura",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fatturacontroller",
+								"salvafattura"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINA FATTURA",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fatturacontroller/eliminafattura/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fatturacontroller",
+								"eliminafattura",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AGGIORNA FATTURA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"anno\":\"2008\",\r\n\"data\":\"2003-12-23\",\r\n\"importo\":\"45643\",\r\n\"numero\":\"45\",\r\n\"stato\":{\r\n    \"id\":\"14\",\r\n    \"nome\":\"Successo\"\r\n}\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fatturacontroller/aggiornafattura/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fatturacontroller",
+								"aggiornafattura",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RICERCA PER CLIENTE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fatturacontroller/ricercapercliente?cliente=Maria",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fatturacontroller",
+								"ricercapercliente"
+							],
+							"query": [
+								{
+									"key": "cliente",
+									"value": "Maria"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RICERCA PER STATO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fatturacontroller/ricercaperstato?stato=Pagata",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fatturacontroller",
+								"ricercaperstato"
+							],
+							"query": [
+								{
+									"key": "stato",
+									"value": "Pagata"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RICERCA PER ANNO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fatturacontroller/ricercaperanno?anno=2010",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fatturacontroller",
+								"ricercaperanno"
+							],
+							"query": [
+								{
+									"key": "anno",
+									"value": "2010"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RICERCA PER DATA",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fatturacontroller/ricercaperdata?data=2001-10-12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fatturacontroller",
+								"ricercaperdata"
+							],
+							"query": [
+								{
+									"key": "data",
+									"value": "2001-10-12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RICERCA PER RANGE IMPORTO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fatturacontroller/ricercaperrange?minimo=0&massimo=1000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fatturacontroller",
+								"ricercaperrange"
+							],
+							"query": [
+								{
+									"key": "minimo",
+									"value": "0"
+								},
+								{
+									"key": "massimo",
+									"value": "1000"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "SALVA CLIENTE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"ragioneSociale\":\"Acea\",\r\n\"partitaIva\":\"102012\",\r\n\"tipoCliente\":\"PA\",\r\n\"email\":\"l@gmail.it\",\r\n\"pec\":\"l@gmail.com\",\r\n\"telefono\":\"03829832\",\r\n\"nomeContatto\":\"lollo\",\r\n\"cognomeContatto\":\"pe\",\r\n\"telefonoContatto\":\"34539489\",\r\n\"emailContatto\":\"acea@gm.it\",\r\n\"indirizzoSedeOperativa\":{\r\n    \"id\":\"2\",\r\n \"via\":\"via duomo\",\r\n\"civico\":\"29\",\r\n\"cap\":\"000298\",\r\n\"localita\":\"mare\",\r\n\"comune\":{\r\n    \"nome\":\"Navigli\",\r\n    \"provincia\":{\r\n        \"nome\":\"Milano\",\r\n        \"sigla\":\"MI\"\r\n    }\r\n}\r\n},\r\n\"indirizzoSedeLegale\":{\r\n\"id\":\"2\",\r\n \"via\":\"via duomo\",\r\n\"civico\":\"29\",\r\n\"cap\":\"23456\",\r\n\"localita\":\"mare\",\r\n\"comune\":{\r\n    \"nome\":\"Navigli\",\r\n    \"provincia\":{\r\n        \"nome\":\"Milano\",\r\n        \"sigla\":\"MI\"\r\n    }\r\n}\r\n},\r\n\"dataInserimento\":\"2021-05-17\",\r\n\"dataUltimoContatto\":\"2021-04-18\",\r\n\"fatturatoAnnuale\":\"2000.45\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cliente/salvacliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente",
+								"salvacliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINA CLIENTE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cliente/eliminacliente/14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente",
+								"eliminacliente",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AGGIORNA CLIENTE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\":\"nonloso@banan.com\",\r\n\"nomeContatto\":\"Jeff\",\r\n\"cognomeContatto\":\"Johannsen\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cliente/aggiornacliente/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente",
+								"aggiornacliente",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ORDINA PER, ?sort=(nome)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cliente/getorder?sort=email",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente",
+								"getorder"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "email"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RICERCA PER NOME",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cliente/ricercapernome?nome=Dario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente",
+								"ricercapernome"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Dario"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RICERCA PER FATTURATO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cliente/ricercaperfatturato?fatturato=450.000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente",
+								"ricercaperfatturato"
+							],
+							"query": [
+								{
+									"key": "fatturato",
+									"value": "450.000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RICERCA PER DATA INSERIMENTO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cliente/ricercaperdatains?data=2021-10-28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente",
+								"ricercaperdatains"
+							],
+							"query": [
+								{
+									"key": "data",
+									"value": "2021-10-28"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RICERCA PER DATA ULTIMO CONTATTO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cliente/ricercaperdatault?data=2021-04-18",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente",
+								"ricercaperdatault"
+							],
+							"query": [
+								{
+									"key": "data",
+									"value": "2021-04-18"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Security",
+			"item": [
+				{
+					"name": "SALVA UTENTE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usercontroller/save?username=locusta&nome=Natasha&email=natashalocusta@yahoo.it&password=nataloc&active=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usercontroller",
+								"save"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "locusta"
+								},
+								{
+									"key": "nome",
+									"value": "Natasha"
+								},
+								{
+									"key": "email",
+									"value": "natashalocusta@yahoo.it"
+								},
+								{
+									"key": "password",
+									"value": "nataloc"
+								},
+								{
+									"key": "active",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SIGNUP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"username\":\"dariox\",\r\n\"email\":\"dario@yahoo.it\",\r\n\"password\":\"dariuccio\",\r\n\"nome\":\"Dario\",\r\n\"cognome\":\"Rossi\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"username\":\"dariox\",\r\n\"password\":\"dariuccio\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
